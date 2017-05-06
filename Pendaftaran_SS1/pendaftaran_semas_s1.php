@@ -103,13 +103,18 @@
                     <p style="font-size:12px; color:gray;">Prodi pilihan 1, 2, dan 3 tidak boleh sama</p>
                     <select name="prodi1" style="width:100%;" required>
                       <option value="">--select--</option>
+                      <option value="">Ilmu Komputer</option>
+                      <option value="">Kedokteran</option>
+                      <option value="">Matematika</option>
+                      <option value="">Teknik Sipil</option>
                     <?php
-                      $list=mysql_query("select nama from PROGRAM_STUDI where jenjang='S1' order by nama asc");
-                      while($row_list=mysql_fetch_assoc($list)){?>
-                        <option value="<? echo $row_list['nama']; ?>">
-                          <?echo $row_list['nama'];?>
-                        </option>
-                      <? } ?>
+                      // $list=mysql_query("select nama from PROGRAM_STUDI where jenjang='S1' order by nama asc");
+                      // while($row_list=mysql_fetch_assoc($list)){
+                        ?>
+                        <!-- <option value="<? //echo $row_list['nama']; ?>"> -->
+                          <?//echo $row_list['nama'];?>
+                        <!-- </option> -->
+                      <? //} ?>
                     </select> 
                   </td>
               </tr>
@@ -119,14 +124,18 @@
                   </td>
                   <td>
                     <select name="prodi2" style="width:100%;">
-                      <option value="select">--select--</option>
+                      <option value="">--select--</option>
+                      <option value="">Ilmu Komputer</option>
+                      <option value="">Kedokteran</option>
+                      <option value="">Matematika</option>
+                      <option value="">Teknik Sipil</option>
                     <?php
-                      $list=mysql_query("select nama from PROGRAM_STUDI where jenjang='S2' order by nama asc");
-                      while($row_list=mysql_fetch_assoc($list)){?>
-                        <option value="<? echo $row_list['nama']; ?>">
-                          <?echo $row_list['nama'];?>
-                        </option>
-                      <? } ?>
+                      // $list=mysql_query("select nama from PROGRAM_STUDI where jenjang='S2' order by nama asc");
+                      // while($row_list=mysql_fetch_assoc($list)){?>
+                        <!-- <option value="<? //echo $row_list['nama']; ?>"> -->
+                          <?//echo $row_list['nama'];?>
+                        <!-- </option> -->
+                      <? //} ?>
                     </select> 
                   </td>
               </tr>
@@ -136,14 +145,18 @@
                   </td>
                   <td>
                     <select name="prodi3" style="width:100%;">
-                      <option value="select">--select--</option>
+                      <option value="">--select--</option>
+                      <option value="">Ilmu Komputer</option>
+                      <option value="">Kedokteran</option>
+                      <option value="">Matematika</option>
+                      <option value="">Teknik Sipil</option>
                     <?php
-                      $list=mysql_query("select nama from PROGRAM_STUDI where jenjang='S3' order by nama asc");
-                      while($row_list=mysql_fetch_assoc($list)){?>
-                        <option value="<? echo $row_list['nama']; ?>">
-                          <?echo $row_list['nama'];?>
-                        </option>
-                      <? } ?>
+                      // $list=mysql_query("select nama from PROGRAM_STUDI where jenjang='S3' order by nama asc");
+                      // while($row_list=mysql_fetch_assoc($list)){?>
+                         <!-- <option value="<? //echo $row_list['nama']; ?>"> -->
+                           <?//echo $row_list['nama'];?>
+                        <!-- </option> -->
+                      <? //} ?>
                     </select> 
                   </td>
               </tr>
@@ -154,13 +167,16 @@
                   <td>
                     <select name="kota" style="width:100%;" required>
                     <option value="">--select--</option>
+                    <option value="">Bogor</option>
+                    <option value="">Depok</option>
+                    <option value="">Jakarta</option>
                     <?php
-                      $list=mysql_query("select kota from LOKASI_UJIAN where jenjang='S1' order by kota asc");
-                      while($row_list=mysql_fetch_assoc($list)){?>
-                        <option value="<? echo $row_list['kota']; ?>">
-                          <?echo $row_list['kota'];?>
-                        </option>
-                      <? } ?>
+                      // $list=mysql_query("select kota from LOKASI_UJIAN where jenjang='S1' order by kota asc");
+                      // while($row_list=mysql_fetch_assoc($list)){?>
+                        <!-- <option value="<? //echo $row_list['kota']; ?>"> -->
+                          <?//echo $row_list['kota'];?>
+                        <!-- </option> -->
+                      <? //} ?>
                     </select> 
                   </td>
               </tr>
@@ -171,13 +187,16 @@
                   <td>
                     <select name="tempat" style="width:100%;" required>
                     <option value="">--select--</option>
+                    <option value="">Kampus A</option>
+                    <option value="">Kampus B</option>
+                    <option value="">Kampus C</option>
                     <?php
-                      $list=mysql_query("select tempat from LOKASI_UJIAN where jenjang='S1' order by tempat asc");
-                      while($row_list=mysql_fetch_assoc($list)){?>
-                        <option value="<? echo $row_list['tempat']; ?>">
-                          <?echo $row_list['tempat'];?>
-                        </option>
-                      <? } ?>
+                      // $list=mysql_query("select tempat from LOKASI_UJIAN where jenjang='S1' order by tempat asc");
+                      // while($row_list=mysql_fetch_assoc($list)){?>
+                        <!-- <option value="<? //echo $row_list['tempat']; ?>"> -->
+                          <?//echo $row_list['tempat'];?>
+                        <!-- </option> -->
+                      <? //} ?>
                     </select> 
                   </td>
               </tr>

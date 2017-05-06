@@ -29,14 +29,22 @@
           Jenjang :
           <select name="jenjang" style="width:10%;">
           <?php
-            mysql_connect ("localhost","root","");
-            mysql_select_db ("sirima");
-            $list=mysql_query("select * from jenjang order by nama asc");
-            while($row_list=mysql_fetch_assoc($list)){?>
-                <option value="<? echo $row_list['nama']; ?>">
-                  <?echo $row_list['nama'];?>
-                </option>
-            <? } ?>
+            // mysql_connect ("localhost","root","");
+            // mysql_select_db ("sirima");
+            // $list=mysql_query("select * from jenjang order by nama asc");
+            // while($row_list=mysql_fetch_assoc($list)){
+              ?>
+                <!-- <option value="<? echo $row_list['nama']; ?>"> -->
+                  <?
+                  // echo $row_list['nama'];
+                  ?>
+                <!-- </option> -->
+            <? 
+          // } 
+          ?>
+          <option value="S1">S1</option>
+          <option value="S2">S2</option>
+          <option value="S3">S3</option>
           </select> 
           <br><br>
           <input class="btn btn-success" id="jenjang-submit" type="submit" name="submit" value="Pilih">
