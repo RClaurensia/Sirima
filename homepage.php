@@ -8,11 +8,13 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="https://localhost/basdat/sirima/bootstrap/css/bootstrap.min.css" rel="stylesheet"/> 	
-    <script src="https://localhost/basdat/sirima/bootstrap/js/bootstrap.min.js"></script>
-	<script src="https://localhost/basdat/sirima/datepicker.js"></script>
-	<link rel="stylesheet" href="https://localhost/basdat/sirima/datepicker.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link href="http://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet"/> 	
+    <script src="http://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.min.css"></script>
   </head>
 <style>
 /*
@@ -134,11 +136,7 @@ body {
 }
 </style>
   <body>
-  <script>	
-	$(document).ready(function(){
-		$('#dp2').datepicker();
-	});
-  </script>
+
     <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgb(0, 33, 71);height:100px;">
       <div class="container-fluid">
          <div class="navbar-header">
@@ -168,44 +166,53 @@ body {
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar"  style="margin-top: 40px;">
-		<ul class="nav nav-sidebar">
+          <ul class="nav nav-sidebar">
 			<li class=""><a href="http://localhost/basdat/sirima/registration.php">Register</a></li>
-            <li class="active"><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
-            <li><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
-			<li><a href="http://localhost/basdat/sirima/pemilihan_prodi_riwayat.php">Daftar Pelamar Diterima</a></li>
-			<li><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
-            <li><a href="http://localhost/basdat/sirima/lihat_kartu_ujian.php">Kartu Ujian</a></li>
-            <li><a href="http://localhost/basdat/sirima/lihat_seleksi.php" >Hasil Seleksi</a></li>
+            <li class=""><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Riwayat Pendaftaran</a></li>
+            <li><a href="#">Kartu Ujian</a></li>
+            <li><a href="#">Hasil Seleksi</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px;">
-					 <h1 style="text-align: center;">Pendaftaran Sukses</h1>
-        <h4 style="text-align: center;">Selamat pembayaran berhasil dilakukan</h4><br>
-          <table border="1" class="table table-striped table-bordered">
-            <tbody>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pendaftaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text" name="asal_sekolah"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pembayaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Nomor kartu ujian</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-            </tbody>
-          </table>
+			<div class="col-lg-6">
+					<h3>Selamat Datang di Website Pendaftaran Universitas Inovasi 2017.</h3>
+					<p>Seleksi Penerimaan Mahasiswa Baru  Universitas Inovasi Tahun 2017  dilaksanakan melalui 3 jalur, yaitu:</p>
+					<ul class="list-group">
+						<li class="list-group-item">1. Jalur Non Reguler</li>
+						<li class="list-group-item">2. Jalur Reguler</li>
+						<li class="list-group-item">3. Jalur Program Pasca Sarjana</li>
+					</ul>
+				</div>
+
+				<div class="col-lg-6">
+					<h4>Berikut Merupakan Tahapan Dalam Melakukan Pendaftaran Online Yang Harus di Lewati Peserta Pendaftaran:</h4><br/>
+					<ul class="list-group">
+						<li class="list-group-item">1. Registrasi dan melengkapi formulir pendaftaran.</li>
+						<li class="list-group-item">2. Mendapatkan kode pembayaran.</li>
+						<li class="list-group-item">3. Membayar biaya pendaftaran di Bank BNI.</li>
+						<li class="list-group-item">4. Melakukan konfirmasi pembayaran.</li>
+						<li class="list-group-item">5. Mendapatkan nomor peserta dan nomor ruang ujian.</li>
+						<li class="list-group-item">6. Mengikuti ujian tulis (khusus jalur reguler) dan wawancara.</li>
+						<li class="list-group-item">7. Pengumuman kelulusan.</li>
+						<li class="list-group-item">8. Daftar ulang bagi calon mahasiswa yang lulus.</li>
+					</ul>
+				</div>
         </div>
       </div>
     </div>
   </body>
+  <script>
+	var $nav = $("nav"),
 
+
+	$(window).scroll(function() {
+	  if($(this).scrollTop() > 150) {
+		 $nav.addClass('fixedTop');
+	  } else {
+		 $nav.removeClass('fixedTop');
+	  }
+
+	})
+  </script>
 </html>

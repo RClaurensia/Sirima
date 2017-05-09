@@ -13,6 +13,8 @@
     <script src="https://localhost/basdat/sirima/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://localhost/basdat/sirima/datepicker.js"></script>
 	<link rel="stylesheet" href="https://localhost/basdat/sirima/datepicker.css"/>
+	<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
   </head>
 <style>
 /*
@@ -155,7 +157,7 @@ body {
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#" style="color: #ffffff; font-size: 14px;">SETTINGS</a></li>
             <li><a href="#" style="color: #ffffff; font-size: 14px;">HELP</a></li>
-			<li><a href="#" style="color: #ffffff; font-size: 14px;">LOGOUT</a></li>
+			<li><a href="index.php" style="color: #ffffff; font-size: 14px;">LOGOUT</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -168,44 +170,56 @@ body {
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar"  style="margin-top: 40px;">
-		<ul class="nav nav-sidebar">
+          <ul class="nav nav-sidebar">
 			<li class=""><a href="http://localhost/basdat/sirima/registration.php">Register</a></li>
-            <li class="active"><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
             <li><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
 			<li><a href="http://localhost/basdat/sirima/pemilihan_prodi_riwayat.php">Daftar Pelamar Diterima</a></li>
 			<li><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
             <li><a href="http://localhost/basdat/sirima/lihat_kartu_ujian.php">Kartu Ujian</a></li>
-            <li><a href="http://localhost/basdat/sirima/lihat_seleksi.php" >Hasil Seleksi</a></li>
+            <li class="active"><a href="http://localhost/basdat/sirima/lihat_seleksi.php" >Hasil Seleksi</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px;">
-					 <h1 style="text-align: center;">Pendaftaran Sukses</h1>
-        <h4 style="text-align: center;">Selamat pembayaran berhasil dilakukan</h4><br>
-          <table border="1" class="table table-striped table-bordered">
-            <tbody>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pendaftaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text" name="asal_sekolah"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pembayaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Nomor kartu ujian</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-            </tbody>
-          </table>
+			<h1 style="text-align: center;">Hasil Seleksi</h1><br>
+				<table id="example" class="table table-striped table-bordered"  cellpadding="5" cellspacing="0">
+					<tbody>
+						<tr>
+							<td>Id Pendaftaran</td>
+							<td>:</td>
+							<td>1234</td>
+						</tr>
+						<tr>
+							<td>Nama lengkap</td>
+							<td>:</td>
+							<td>Tania Putri</td>
+						</tr>
+						<tr>
+							<td>Status</td>
+							<td>:</td>
+							<td>LULUS / TIDAK LULUS / BELUM LULUS</td>
+						</tr>
+						<tr>
+							<td>Prodi</td>
+							<td>:</td>
+							<td>S1 Ilmu Komputer Reguler</td>
+						</tr>
+						<tr>
+							<td>Npm</td>
+							<td>:</td>
+							<td>1507345625</td>
+						</tr>
+					</tbody>
+				</table>
+       
         </div>
       </div>
     </div>
   </body>
-
+<script>
+$(document).ready(function() {
+    //$('#example').DataTable();
+	
+});
+</script>
 </html>
