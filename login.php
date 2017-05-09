@@ -109,9 +109,48 @@ body {
   </style>
   <body>
 
-    <div class="container">
+    <div class="containers">
+	<div class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(0, 33, 71) ! important; height: 150px; position: relative; top: 0px; margin-top: -50px;">
+      <div class="container-fluid">
+		<!-- Logo -->
+		 <table style="width:100%">
+			  <tr>
+				<td width="60px;">
+					<img src="http://localhost/basdat/sirima/logo.png" height="150" width="150">
+				</td>
+				<td>
+					&nbsp;	
+				</td>
+				<td >
+					<label style="font: bolder 20px courier; color:white;">Penerimaan Mahasiswa Baru</label><BR>
+					
+				</td>
+				<td width="300px;">
+				</td>
+				<td>
+					<BR><BR><BR><BR>
+					<a href="" style="color: #ffffff; font-size: 15px;">HOME</a>
+				</td>
+				<td>
+					<BR><BR><BR><BR>
+					<a href="" style="color: #ffffff; font-size: 15px;">PANDUAN</a>
+				</td>
+				<td>
+					<BR><BR><BR><BR>
+					<a href="" style="color: #ffffff; font-size: 15px;">KONTAK</a>
+				</td>
+				<td>
+					<BR><BR><BR><BR>
+					<a href="https://localhost/basdat/sirima/login.php" style="color: #ffffff; font-size: 15px;">LOGIN</a>
+				</td>
+				
+			  </tr>
+		</table> 
+       
+      </div>
+	  </div>
       <div class="login-content">
-      <form class="form-signin">
+      <form class="form-signin" id="form-login" action="http://localhost/basdat/sirima/homepage.php">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -122,13 +161,21 @@ body {
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 20px;">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 20px;" id="btn-login">Sign in</button>
       </form>
     </div>
     </div> <!-- /container -->
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#form-login').submit(function(){
+				alert('aaaa');
+				window.location.replace("http://localhost/basdat/sirima/homepage.php");
+			});
+			
+		})
+	</script>
   </body>
 </html>
