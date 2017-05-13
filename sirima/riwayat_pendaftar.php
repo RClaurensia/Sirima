@@ -13,6 +13,8 @@
     <script src="https://localhost/basdat/sirima/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://localhost/basdat/sirima/datepicker.js"></script>
 	<link rel="stylesheet" href="https://localhost/basdat/sirima/datepicker.css"/>
+	<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
   </head>
 <style>
 /*
@@ -139,30 +141,8 @@ body {
 		$('#dp2').datepicker();
 	});
   </script>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgb(0, 33, 71);height:100px;">
-      <div class="container-fluid">
-         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <img src="http://localhost/basdat/sirima/logo.png" height="100" width="100">
-		  <label style="font: bolder 20px courier; color:white;">Penerimaan Mahasiswa Baru</label>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" style="color: #ffffff; font-size: 14px;">SETTINGS</a></li>
-            <li><a href="#" style="color: #ffffff; font-size: 14px;">HELP</a></li>
-			<li><a href="#" style="color: #ffffff; font-size: 14px;">LOGOUT</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div> 
-	  
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(0, 33, 71); margin-top: 50px;">
+     <?php include "header.php"; ?>
     </div>
 
     <div class="container-fluid">
@@ -170,29 +150,72 @@ body {
         <div class="col-sm-3 col-md-2 sidebar"  style="margin-top: 40px;">
 			<ul class="nav nav-sidebar">
 			<li class=""><a href="http://localhost/basdat/sirima/registration.php">Register</a></li>
-            <li class="active"><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
             <li><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
 			<li><a href="http://localhost/basdat/sirima/pemilihan_prodi_riwayat.php">Daftar Pelamar Diterima</a></li>
-			<li><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
+			<li class="active"><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
             <li><a href="http://localhost/basdat/sirima/lihat_kartu_ujian.php">Kartu Ujian</a></li>
             <li><a href="http://localhost/basdat/sirima/lihat_seleksi.php" >Hasil Seleksi</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px;">
-			<h1 style="text-align: center;">Form Pemilihan Jenjang Untuk Pendaftaran</h1><br>
-          <form style="width:100%; text-align: center;" action="pendaftaran_semas_s1.php" method="post" target="_self">
-          Jenjang :
-          <select name="jenjang" style="width:10%;">
-          <option value="S1">S1</option>
-          <option value="S2">S2</option>
-          <option value="S3">S3</option>
-          </select> 
-          <br><br>
-          <input class="btn btn-primary" id="jenjang-submit" type="submit" name="submit" value="Pilih">
-        </form>
+			<h1 style="text-align: center;">Lihat Riwayat Pendaftar</h1><br>
+			<label style="padding-bottom:10px;"><i>Nama Lengkap: Tania Putri</i></label>
+				<table class="table table-striped" id="pendaftar" style="margin-top:10px;">
+					<thead>
+					  <tr>
+						<th>Id Pendaftaran</th>
+						<th>Nomor Periode</th>
+						<th>Tahun Periode</th>
+						<th>No Kartu Ujian</th>
+						<th>Jalur</th>
+						<th>Prodi 1</th>
+						<th>Prodi 2</th>
+						<th>Prodi 3</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td><a href = "pendaftaran_uui.php">5193</a></td>
+						<td>1</td>
+						<td>2017</td>
+						<td>9845</td>
+						<td>UUI</td>
+						<td>S1 Matematika Reguler</td>
+						<td>S1 Ilmu Komputer Reguler</td>
+						<td></td>
+					  </tr>
+					   <tr>
+						<td><a href = "pendaftaran_semas_sarjana.php">1764</a></td>
+						<td>2</td>
+						<td>2017</td>
+						<td>1234512345</td>
+						<td>SEMAS SARJANA</td>
+						<td>S1 Ilmu Komputer Reguler </td>
+						<td>S1 Biologi Reguler</td>
+						<td>S1 Fisika Reguler</td>
+					  </tr>
+					  <tr>
+						<td><a href = "pendaftaran_semas_pascasarjana.php">5634</a></td>
+						<td>3</td>
+						<td>2017</td>
+						<td>123482345</td>
+						<td>SEMAS PASCASARJANA</td>
+						<td>S1 Ilmu Komputer Reguler </td>
+						<td>S1 Biologi Reguler</td>
+						<td>S1 Fisika Reguler</td>
+					  </tr> 
+					</tbody>
+			</table>
+       
         </div>
       </div>
     </div>
   </body>
-
+<script>
+$(document).ready(function() {
+    $('#pendaftar').DataTable();
+	
+});
+</script>
 </html>
