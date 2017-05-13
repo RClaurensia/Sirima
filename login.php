@@ -108,6 +108,13 @@ body {
     //color: #fefefe; 
     background-color: rgba(255, 255, 255, 1);
 }
+.logo{
+  width: 96%;
+    height: 20%;
+}
+.tr{
+  height: 100%;
+}
 
 /*.login-content,
 .login-content2 {
@@ -145,13 +152,13 @@ body {
   <body>
 
     <div class="containers">
-	<div class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(0, 33, 71) ! important; height: 150px; position: relative; top: 0px; margin-top: -50px;">
+	<div class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(0, 33, 71) ! important; height: 110px; position: relative; top: 0px; margin-top: -50px;">
       <div class="container-fluid">
 		<!-- Logo -->
 		 <table style="width:100%">
 			  <tr>
 				<td width="60px;">
-					<img src="http://localhost/basdat/sirima/logo.png" height="150" width="150">
+					<img class="logo" src="http://localhost/basdat/sirima/logo.png" height="150" width="150">
 				</td>
 				<td>
 					&nbsp;	
@@ -163,21 +170,21 @@ body {
 				<td width="300px;">
 				</td>
 				<td>
-					<BR><BR><BR><BR>
-					<a href="" style="color: #ffffff; font-size: 15px;">HOME</a>
-				</td>
-				<td>
-					<BR><BR><BR><BR>
-					<a href="" style="color: #ffffff; font-size: 15px;">PANDUAN</a>
-				</td>
-				<td>
-					<BR><BR><BR><BR>
-					<a href="" style="color: #ffffff; font-size: 15px;">KONTAK</a>
-				</td>
-				<td>
-					<BR><BR><BR><BR>
-					<a href="https://localhost/basdat/sirima/login.php" style="color: #ffffff; font-size: 15px;">LOGIN</a>
-				</td>
+          <BR><BR><BR><BR>
+          <a href="https://localhost/basdat/sirima/index.php" style="color: #ffffff; font-size: 15px;">HOME</a>
+        </td>
+        <td>
+          <BR><BR><BR><BR>
+          <a href="http://localhost/basdat/sirima/lihat_seleksi.php" style="color: #ffffff; font-size: 15px;">PENGUMUMAN</a>
+        </td>
+        <td>
+          <BR><BR><BR><BR>
+          <a href="https://localhost/basdat/sirima/pemilihan_jenjang_pendaftaran.php" style="color: #ffffff; font-size: 15px;">PENDAFTARAN</a>
+        </td>
+        <td>
+          <BR><BR><BR><BR>
+          <a href="https://localhost/basdat/sirima/login.php" style="color: #ffffff; font-size: 15px;">LOGIN</a>
+        </td>
 				
 			  </tr>
 		</table> 
@@ -197,6 +204,7 @@ body {
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" style="margin-top: 20px;" id="btn-login">Sign in</button>
+        <!-- <br><a href="">Create account</a> -->
 		<br>
 		<?php
 		if ($error != ''){

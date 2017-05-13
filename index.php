@@ -29,7 +29,6 @@ body {
 /*
  * Global add-ons
  */
-
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
@@ -47,7 +46,6 @@ body {
 /*
  * Sidebar
  */
-
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
@@ -89,7 +87,6 @@ body {
 /*
  * Main content
  */
-
 .main {
   padding: 20px;
 }
@@ -103,11 +100,9 @@ body {
   margin-top: 0;
 }
 
-
 /*
  * Placeholder dashboard ideas
  */
-
 .placeholders {
   margin-bottom: 30px;
   text-align: center;
@@ -131,12 +126,23 @@ footer{
 }
 .custom-nav{
   background-color: rgb(0, 33, 71) ! important; 
-  height: 150px; 
+  height: 110px;
   position: relative; 
   top: 0px; 
   margin-top: -50px;
 }
-	</style>
+.logo{
+	width: 96%;
+    height: 20%;
+}
+.img-home{
+	width: 100%;
+}
+.tr{
+	height: 100%;
+}
+</style>
+
   </head>
 
   <body>
@@ -147,7 +153,7 @@ footer{
 		 <table style="width:100%">
 			  <tr>
 				<td width="60px;">
-					<img src="http://localhost/basdat/sirima/logo.png" height="150" width="150">
+					<img class="logo" src="http://localhost/basdat/sirima/logo.png" height="150" width="150">
 				</td>
 				<td>
 					&nbsp;	
@@ -160,15 +166,15 @@ footer{
 				</td>
 				<td>
 					<BR><BR><BR><BR>
-					<a href="" style="color: #ffffff; font-size: 15px;">HOME</a>
+					<a href="https://localhost/basdat/sirima/index.php" style="color: #ffffff; font-size: 15px;">HOME</a>
 				</td>
 				<td>
 					<BR><BR><BR><BR>
-					<a href="" style="color: #ffffff; font-size: 15px;">GUIDE</a>
+					<a href="http://localhost/basdat/sirima/lihat_seleksi.php" style="color: #ffffff; font-size: 15px;">PENGUMUMAN</a>
 				</td>
 				<td>
 					<BR><BR><BR><BR>
-					<a href="" style="color: #ffffff; font-size: 15px;">CONTACT</a>
+					<a href="https://localhost/basdat/sirima/pemilihan_jenjang_pendaftaran.php" style="color: #ffffff; font-size: 15px;">PENDAFTARAN</a>
 				</td>
 				<td>
 					<BR><BR><BR><BR>
@@ -193,7 +199,7 @@ footer{
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner">
 				<div class="item active">
-				  <img src="http://localhost/basdat/sirima/home.jpg" alt="Los Angeles">
+				  <img class="img-home" src="http://localhost/basdat/sirima/home.jpg" alt="Los Angeles">
 				</div>
 
 				<div class="item">

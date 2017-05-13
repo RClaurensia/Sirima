@@ -139,17 +139,17 @@ body {
 		$('#dp2').datepicker();
 	});
   </script>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(0, 33, 71); margin-top: 50px;">
+  <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(0, 33, 71); margin-top: 50px;">
      <?php include "header.php"; ?>
     </div>
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar"  style="margin-top: 40px;">
-		<ul class="nav nav-sidebar">
+			<ul class="nav nav-sidebar">
 			<li class=""><a href="http://localhost/basdat/sirima/registration.php">Register</a></li>
-            <li class=""><a href="http://localhost/basdat/sirima/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
+            <li class="active"><a href="http://localhost/basdat/sirima/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
+            <li><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
 			<li><a href="http://localhost/basdat/sirima/pemilihan_prodi_riwayat.php">Daftar Pelamar Diterima</a></li>
 			<li><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
             <li><a href="http://localhost/basdat/sirima/lihat_kartu_ujian.php">Kartu Ujian</a></li>
@@ -157,23 +157,16 @@ body {
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px;">
-			<h1 style="text-align: center;">Form Pemilihan Jenjang</h1><br>
-          <form style="width:100%; text-align: center;" action="rekap_pendaftaran.php" method="post" target="_self">
-          Periode :
-          <select name="periode" style="width:10%;">
-          <option value="S1">1-2017</option>
-          <option value="S2">2-2017</option>
-          <option value="S3">3-2017</option>
-          </select> 
-          <br><br>
-		  Jenjang :
-          <select name="periode" style="width:10%;">
+			<h1 style="text-align: center;">Form Pemilihan Jenjang Untuk Pendaftaran</h1><br>
+          <form style="width:100%; text-align: center;" action="pendaftaran_semas_s1.php" method="post" target="_self">
+          Jenjang :
+          <select name="jenjang" style="width:10%;">
           <option value="S1">S1</option>
           <option value="S2">S2</option>
           <option value="S3">S3</option>
           </select> 
-		  <BR><BR>
-          <input class="btn btn-primary" id="jenjang-submit" type="submit" name="submit" value="Lihat Rekap Pendaftaran">
+          <br><br>
+          <input class="btn btn-primary" id="jenjang-submit" type="submit" name="submit" value="Pilih">
         </form>
         </div>
       </div>
