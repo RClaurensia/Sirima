@@ -1,3 +1,35 @@
+<?php 
+require('db/connect.php');
+include('db/function.php');
+
+
+session_start(); // Starting Session
+$error=''; // Variable To Store Error Message
+if (isset($_POST['submit'])) {
+if (empty($_POST['email']) || empty($_POST['password'])) {
+$error = "Email or Password is invalid";
+}
+else
+{
+// Define $username and $password
+$username=$_POST['email'];
+$password=$_POST['password'];
+
+// SQL query to fetch information of registerd users and finds user match.
+$query = pg_exec($dbconn, "select * from akun where password='$password' AND username='$username'");
+$rows = pg_numrows($query);
+
+if ($rows == 1) {
+$_SESSION['login_user']=$username; // Initializing Session
+header("location: homepage.php"); // Redirecting To Other Page
+} else {
+$error = "Username or Password is invalid";
+}
+mysql_close($connection); // Closing Connection
+}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -150,18 +182,18 @@ body {
       </div>
 	  </div>
       <div class="login-content">
-      <form class="form-signin" id="form-login" action="http://localhost/basdat/sirima/homepage.php">
+      <form class="form-signin" id="form-login" action="db/test.php" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 20px;" id="btn-login">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" style="margin-top: 20px;" id="btn-login">Sign in</button>
       </form>
     </div>
     </div> <!-- /container -->
