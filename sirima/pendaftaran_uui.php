@@ -13,6 +13,8 @@
     <script src="https://localhost/basdat/sirima/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://localhost/basdat/sirima/datepicker.js"></script>
 	<link rel="stylesheet" href="https://localhost/basdat/sirima/datepicker.css"/>
+	<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
   </head>
 <style>
 /*
@@ -139,30 +141,8 @@ body {
 		$('#dp2').datepicker();
 	});
   </script>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgb(0, 33, 71);height:100px;">
-      <div class="container-fluid">
-         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <img src="http://localhost/basdat/sirima/logo.png" height="100" width="100">
-		  <label style="font: bolder 20px courier; color:white;">Penerimaan Mahasiswa Baru</label>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" style="color: #ffffff; font-size: 14px;">SETTINGS</a></li>
-            <li><a href="#" style="color: #ffffff; font-size: 14px;">HELP</a></li>
-			<li><a href="#" style="color: #ffffff; font-size: 14px;">LOGOUT</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div> 
-	  
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(0, 33, 71); margin-top: 50px;">
+     <?php include "header.php"; ?>
     </div>
 
     <div class="container-fluid">
@@ -170,42 +150,92 @@ body {
         <div class="col-sm-3 col-md-2 sidebar"  style="margin-top: 40px;">
 		<ul class="nav nav-sidebar">
 			<li class=""><a href="http://localhost/basdat/sirima/registration.php">Register</a></li>
-            <li class="active"><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
             <li><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
 			<li><a href="http://localhost/basdat/sirima/pemilihan_prodi_riwayat.php">Daftar Pelamar Diterima</a></li>
-			<li><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
+			<li class="active"><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
             <li><a href="http://localhost/basdat/sirima/lihat_kartu_ujian.php">Kartu Ujian</a></li>
             <li><a href="http://localhost/basdat/sirima/lihat_seleksi.php" >Hasil Seleksi</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px;">
-					 <h1 style="text-align: center;">Pendaftaran Sukses</h1>
-        <h4 style="text-align: center;">Selamat pembayaran berhasil dilakukan</h4><br>
-          <table border="1" class="table table-striped table-bordered">
-            <tbody>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pendaftaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text" name="asal_sekolah"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pembayaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Nomor kartu ujian</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-            </tbody>
-          </table>
+			<h1 style="text-align: center;">Detail Pendaftaran UUI</h1><br>
+				<table id="example" class="table table-striped table-bordered"  cellpadding="5" cellspacing="0">
+						<tbody>
+							<tr>
+								<td>Id Pendaftaran</td>
+								<td>:</td>
+								<td>1234</td>
+							</tr>
+							<tr>
+								<td>Periode</td>
+								<td>:</td>
+								<td>1-2017</td>
+							</tr>
+							<tr>
+								<td>Rapot</td>
+								<td>:</td>
+								<td>rapot_123.pdf</td>
+							</tr>
+							<tr>
+								<td>Surat Rekomendasi</td>
+								<td>:</td>
+								<td>rekomendasi_123.pdf</td>
+							</tr>
+							<tr>
+								<td>Asal sekolah</td>
+								<td>:</td>
+								<td>SMA 2 Depok</td>
+							</tr>
+							<tr>
+								<td>Jenis SMA</td>
+								<td>:</td>
+								<td>IPA</td>
+							</tr>
+							<tr>
+								<td>Alamat sekolah </td>
+								<td>:</td>
+								<td>Jl. Veteran 15, Depok</td>
+							</tr>
+							<tr>
+								<td>NISN</td>
+								<td>:</td>
+								<td>9923453456</td>
+							</tr>
+							<tr>
+								<td>Tanggal lulus </td>
+								<td>:</td>
+								<td>2 Desember 2015</td>
+							</tr>
+							<tr>
+								<td>Nilai UAN </td>
+								<td>:</td>
+								<td>38.75</td>
+							</tr>
+							<tr>
+								<td>Prodi pilihan 1 </td>
+								<td>:</td>
+								<td>S1 Ilmu Komputer Reguler</td>
+							</tr>
+							<tr>
+								<td>Prodi pilihan 2 </td>
+								<td>:</td>
+								<td>S1 Biologi Reguler</td>
+							</tr>
+							<tr>
+								<td><a href="pendaftaran.php">Kembali</a></td>
+							</tr>
+						</tbody>
+					</table>
+       
         </div>
       </div>
     </div>
   </body>
-
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+	
+});
+</script>
 </html>

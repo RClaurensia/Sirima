@@ -13,6 +13,8 @@
     <script src="https://localhost/basdat/sirima/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://localhost/basdat/sirima/datepicker.js"></script>
 	<link rel="stylesheet" href="https://localhost/basdat/sirima/datepicker.css"/>
+	<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
   </head>
 <style>
 /*
@@ -139,39 +141,17 @@ body {
 		$('#dp2').datepicker();
 	});
   </script>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgb(0, 33, 71);height:100px;">
-      <div class="container-fluid">
-         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <img src="http://localhost/basdat/sirima/logo.png" height="100" width="100">
-		  <label style="font: bolder 20px courier; color:white;">Penerimaan Mahasiswa Baru</label>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" style="color: #ffffff; font-size: 14px;">SETTINGS</a></li>
-            <li><a href="#" style="color: #ffffff; font-size: 14px;">HELP</a></li>
-			<li><a href="#" style="color: #ffffff; font-size: 14px;">LOGOUT</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div> 
-	  
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(0, 33, 71); margin-top: 50px;">
+     <?php include "header.php"; ?>
     </div>
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar"  style="margin-top: 40px;">
-		<ul class="nav nav-sidebar">
+			<ul class="nav nav-sidebar">
 			<li class=""><a href="http://localhost/basdat/sirima/registration.php">Register</a></li>
-            <li class="active"><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
-            <li><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
+            <li class=""><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
 			<li><a href="http://localhost/basdat/sirima/pemilihan_prodi_riwayat.php">Daftar Pelamar Diterima</a></li>
 			<li><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
             <li><a href="http://localhost/basdat/sirima/lihat_kartu_ujian.php">Kartu Ujian</a></li>
@@ -179,33 +159,48 @@ body {
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px;">
-					 <h1 style="text-align: center;">Pendaftaran Sukses</h1>
-        <h4 style="text-align: center;">Selamat pembayaran berhasil dilakukan</h4><br>
-          <table border="1" class="table table-striped table-bordered">
-            <tbody>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pendaftaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text" name="asal_sekolah"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pembayaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Nomor kartu ujian</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-            </tbody>
-          </table>
+			<h1 style="text-align: center;">Rekap Pendaftaran</h1><br>
+			<label style="padding-bottom:10px;"><i>Jenjang: S1</i></label>
+				<table class="table table-striped" id="pendaftaran">
+					<thead>
+					  <tr>
+						<th>Nama Prodi</th>
+						<th>Jenis Kelas</th>
+						<th>Nama Fakultas</th>
+						<th>Kuota</th>
+						<th>Jumlah Pelamar</th>
+						<th>Jumlah Diterima</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>Ilmu Komputer</td>
+						<td>Reguler</td>
+						<td>Ilmu Komputer</td>
+						<td>110</td>
+						<td>400</td>
+						<td>110</td>
+					  </tr>
+					  <tr>
+						<td>Teknik Industri</td>
+						<td>Paralel</td>
+						<td>Teknik</td>
+						<td>140</td>
+						<td>200</td>
+						<td>58</td>
+					  </tr>
+					 
+					</tbody>
+			</table>
+       
         </div>
       </div>
     </div>
   </body>
-
+<script>
+$(document).ready(function() {
+    $('#pendaftaran').DataTable();
+	
+});
+</script>
 </html>

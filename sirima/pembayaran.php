@@ -139,33 +139,12 @@ body {
 		$('#dp2').datepicker();
 	});
   </script>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgb(0, 33, 71);height:100px;">
-      <div class="container-fluid">
-         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <img src="http://localhost/basdat/sirima/logo.png" height="100" width="100">
-		  <label style="font: bolder 20px courier; color:white;">Penerimaan Mahasiswa Baru</label>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" style="color: #ffffff; font-size: 14px;">SETTINGS</a></li>
-            <li><a href="#" style="color: #ffffff; font-size: 14px;">HELP</a></li>
-			<li><a href="#" style="color: #ffffff; font-size: 14px;">LOGOUT</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div> 
-	  
+	<div class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(0, 33, 71); margin-top: 50px;">
+     <?php include "header.php"; ?>
     </div>
 
-    <div class="container-fluid">
+    </div>
+	    <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar"  style="margin-top: 40px;">
 		<ul class="nav nav-sidebar">
@@ -179,30 +158,26 @@ body {
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px;">
-					 <h1 style="text-align: center;">Pendaftaran Sukses</h1>
-        <h4 style="text-align: center;">Selamat pembayaran berhasil dilakukan</h4><br>
-          <table border="1" class="table table-striped table-bordered">
-            <tbody>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pendaftaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text" name="asal_sekolah"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pembayaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Nomor kartu ujian</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-            </tbody>
-          </table>
+			<h1 style="text-align: center;">Form Pembayaran</h1><br>
+			<form action="pendaftaran_sukses.php" method="post" target="_self">
+			  <table border="1" class="table table-striped table-bordered">
+				<tbody>
+				  <tr>
+					  <td style="padding-right:10px;">
+						<label>Id Pendaftaran</label>
+					  </td>
+					  <td><input style="width:100%;" type="text" name="asal_sekolah"/></td>
+				  </tr>
+				  <tr>
+					  <td style="padding-right:10px;">
+						<label>Biaya Pendaftaran</label>
+					  </td>
+					  <td><input style="width:100%;" type="text"/></td>
+				  </tr>
+				</tbody>
+			  </table>
+			  <input class="btn btn-primary" id="bayar" type="submit" name="submit" value="Bayar">
+			</form>
         </div>
       </div>
     </div>

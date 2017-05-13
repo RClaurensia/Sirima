@@ -139,70 +139,42 @@ body {
 		$('#dp2').datepicker();
 	});
   </script>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgb(0, 33, 71);height:100px;">
-      <div class="container-fluid">
-         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <img src="http://localhost/basdat/sirima/logo.png" height="100" width="100">
-		  <label style="font: bolder 20px courier; color:white;">Penerimaan Mahasiswa Baru</label>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" style="color: #ffffff; font-size: 14px;">SETTINGS</a></li>
-            <li><a href="#" style="color: #ffffff; font-size: 14px;">HELP</a></li>
-			<li><a href="#" style="color: #ffffff; font-size: 14px;">LOGOUT</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div> 
-	  
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: rgb(0, 33, 71); margin-top: 50px;">
+     <?php include "header.php"; ?>
     </div>
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar"  style="margin-top: 40px;">
-		<ul class="nav nav-sidebar">
+		 <ul class="nav nav-sidebar">
 			<li class=""><a href="http://localhost/basdat/sirima/registration.php">Register</a></li>
-            <li class="active"><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="http://localhost/basdat/sirima/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
             <li><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
-			<li><a href="http://localhost/basdat/sirima/pemilihan_prodi_riwayat.php">Daftar Pelamar Diterima</a></li>
+			<li class="active"><a href="http://localhost/basdat/sirima/pemilihan_prodi_riwayat.php">Daftar Pelamar Diterima</a></li>
 			<li><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
             <li><a href="http://localhost/basdat/sirima/lihat_kartu_ujian.php">Kartu Ujian</a></li>
             <li><a href="http://localhost/basdat/sirima/lihat_seleksi.php" >Hasil Seleksi</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px;">
-					 <h1 style="text-align: center;">Pendaftaran Sukses</h1>
-        <h4 style="text-align: center;">Selamat pembayaran berhasil dilakukan</h4><br>
-          <table border="1" class="table table-striped table-bordered">
-            <tbody>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pendaftaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text" name="asal_sekolah"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Id pembayaran</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-              <tr>
-                  <td style="padding-right:10px;">
-                    <label>Nomor kartu ujian</label>
-                  </td>
-                  <td><input style="width:100%;" type="text"/></td>
-              </tr>
-            </tbody>
-          </table>
+			<h1 style="text-align: center;">Form Pemilihan Prodi</h1><br>
+		<form style="width:100%; text-align: center;" action="pelamar_diterima.php" method="post" target="_self">
+          Periode :
+          <select name="periode" style="width:10%;">
+          <option value="S1">1-2017</option>
+          <option value="S2">2-2017</option>
+          <option value="S3">3-2017</option>
+          </select> 
+          <br><br>
+		  Prodi :
+          <select name="periode" style="width:10%;">
+          <option value="S1">S1 Ilmu Komputer Reguler</option>
+          <option value="S2">S2</option>
+          <option value="S3">S3</option>
+          </select> 
+		  <BR><BR>
+          <input class="btn btn-primary" id="jenjang-submit" type="submit" name="submit" value="Lihat Daftar Pelamar Diterima">
+        </form>
         </div>
       </div>
     </div>
