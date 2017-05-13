@@ -4,6 +4,9 @@ include('db/function.php');
 
 
 session_start(); // Starting Session
+if(!empty($_SESSION['username'])){
+header("Location: homepage.php"); // Redirecting To Home Page
+}
 $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
 if (empty($_POST['email']) || empty($_POST['password'])) {
@@ -20,12 +23,12 @@ $query = pg_exec($dbconn, "select * from akun where password='$password' AND use
 $rows = pg_numrows($query);
 
 if ($rows == 1) {
-$_SESSION['login_user']=$username; // Initializing Session
+$_SESSION['username']=$username; // Initializing Session
 header("location: homepage.php"); // Redirecting To Other Page
 } else {
 $error = "Username or Password is invalid";
 }
-mysql_close($connection); // Closing Connection
+pg_close($dbconn); // Closing Connection
 }
 }
 ?>
@@ -182,7 +185,7 @@ body {
       </div>
 	  </div>
       <div class="login-content">
-      <form class="form-signin" id="form-login" action="db/test.php" method="post">
+      <form class="form-signin" id="form-login" action="" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -194,6 +197,12 @@ body {
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" style="margin-top: 20px;" id="btn-login">Sign in</button>
+		<br>
+		<?php
+		if ($error != ''){
+			echo $error;			
+		}
+		?>
       </form>
     </div>
     </div> <!-- /container -->

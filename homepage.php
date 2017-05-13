@@ -1,4 +1,10 @@
 
+<?php
+session_start();
+if(empty($_SESSION['username'])){
+header("Location: login.php"); // Redirecting To Home Page
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -151,9 +157,10 @@ body {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+		    <li><a href="#" style="color: #ffffff; font-size: 14px;"><?php echo $_SESSION['username'] ?></a></li>
             <li><a href="#" style="color: #ffffff; font-size: 14px;">SETTINGS</a></li>
             <li><a href="#" style="color: #ffffff; font-size: 14px;">HELP</a></li>
-			<li><a href="#" style="color: #ffffff; font-size: 14px;">LOGOUT</a></li>
+			<li><a href="logout.php" style="color: #ffffff; font-size: 14px;">LOGOUT</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
