@@ -5,7 +5,7 @@ include('db/function.php');
 session_start(); // Starting Session
 
 if (isset($_POST['submit'])) {
-$username = $_POST['username'];
+$username = $_POST['email'];
 $password = $_POST['password'];
 $nama_lengkap = $_POST['nama'];
 $jenis_kelamin = $_POST['jenis_kelamin'];
@@ -17,6 +17,8 @@ $email = $_POST['email'];
 // SQL query to fetch information of registerd users and finds user match.
 $query = pg_exec($dbconn, "insert into akun (username, role, password) values ('$username',false,'$password') ");
 $query = pg_exec($dbconn, "insert into pelamar (username, nama_lengkap, alamat, jenis_kelamin, tanggal_lahir, no_ktp, email) values ('$username', '$nama_lengkap', '$alamat', '$jenis_kelamin', '$tanggal_lahir', '$no_ktp', '$email') ");
+$_SESSION['username']=$username;
+header('Location: homepage.php');
 }
 
 ?>
@@ -192,7 +194,7 @@ body {
 			<form method="post">
 				<h3>Form Pendaftaran Pelamar</h3>
 			  <div class="form-group">
-				<label for="username">Username</label>
+				<label for="username">Username (Email)</label>
 				<input type="text" class="form-control" id="email" name="username" placeholder="Masukkan username">
 			  </div>
 			  <div class="form-group">
