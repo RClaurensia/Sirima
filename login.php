@@ -21,9 +21,12 @@ $password=$_POST['password'];
 // SQL query to fetch information of registerd users and finds user match.
 $query = pg_exec($dbconn, "select * from akun where password='$password' AND username='$username'");
 $rows = pg_numrows($query);
+$row = pg_fetch_assoc($query);
+$role = $row['role'];
 
 if ($rows == 1) {
 $_SESSION['username']=$username; // Initializing Session
+$_SESSION['role']=$role; // Initializing Session
 header("location: homepage.php"); // Redirecting To Other Page
 } else {
 $error = "Username or Password is invalid";

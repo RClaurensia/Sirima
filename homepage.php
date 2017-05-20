@@ -174,11 +174,17 @@ body {
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar"  style="margin-top: 40px;">
           <ul class="nav nav-sidebar">
-			<li class=""><a href="http://localhost/basdat/sirima/registration.php">Register</a></li>
-            <li class=""><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Riwayat Pendaftaran</a></li>
-            <li><a href="#">Kartu Ujian</a></li>
-            <li><a href="#">Hasil Seleksi</a></li>
+<?php 
+
+if ($_SESSION['role'] == "t") {
+	echo '
+            <li><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
+			<li><a href="http://localhost/basdat/sirima/pemilihan_prodi_riwayat.php">Daftar Pelamar Diterima</a></li>
+<?php '; } else { echo '
+			<li><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
+            <li><a href="http://localhost/basdat/sirima/lihat_kartu_ujian.php">Kartu Ujian</a></li>
+            <li><a href="http://localhost/basdat/sirima/lihat_seleksi.php" >Hasil Seleksi</a></li>
+<?php '; } ?>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px;">
