@@ -13,14 +13,12 @@ $no_ktp = $_POST['no_identitas'];
 $tanggal_lahir = $_POST['tanggallahir'];
 $alamat = $_POST['alamat'];
 $email = $_POST['email'];
-}
 
 // SQL query to fetch information of registerd users and finds user match.
-$query = pg_exec($dbconn, "insert into akun (username, role, password) values ('$username',false, $password) ");
-
-
-
+$query = pg_exec($dbconn, "insert into akun (username, role, password) values ('$username',false,'$password') ");
 $query = pg_exec($dbconn, "insert into pelamar (username, nama_lengkap, alamat, jenis_kelamin, tanggal_lahir, no_ktp, email) values ('$username', '$nama_lengkap', '$alamat', '$jenis_kelamin', '$tanggal_lahir', '$no_ktp', '$email') ");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -191,7 +189,7 @@ body {
     <div class="container-fluid">
       <div class="row">
         <div class="main" style="margin-top: 60px;">
-			<form>
+			<form method="post">
 				<h3>Form Pendaftaran Pelamar</h3>
 			  <div class="form-group">
 				<label for="username">Username</label>
@@ -216,15 +214,15 @@ body {
 			  <div class="form-group">
 				<label for="jenis_kelamin">Jenis Kelamin</label>
 				<select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
-				  <option>Laki-laki</option>
-				  <option>Perempuan</option>
+				  <option>L</option>
+				  <option>P</option>
 				</select>
 			  </div>
 			  <div class="form-group">
 				<label for="exampleSelect2">Tanggal Lahir</label>
 				 <div class="well">
 					<!--<button id="btn2" style="float: right">manual set to 03/17/12</button>-->
-					<input type="text" class="span2" value="02/16/12" data-date-format="mm/dd/yy" id="dp2" name="tanggallahir" >
+					<input type="text" class="span2" value="02/16/12" data-date-format="yy-mm-dd" id="dp2" name="tanggallahir" >
 				  </div>
 			  </div>
 			  <div class="form-group">
@@ -239,7 +237,7 @@ body {
 				<label for="retype_email">Ulangi Email</label>
 				<input type="email" class="form-control" id="retype_email" aria-describedby="emailHelp" placeholder="Masukkan email" />
 			  </div>
-			  <button type="submit" class="btn btn-primary">Daftar</button>
+			  <button type="submit" name="submit" class="btn btn-primary">Daftar</button>
 			</form>
         </div>
       </div>
