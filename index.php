@@ -168,7 +168,7 @@ footer{
 				</td>
 				<td>
 					<BR><BR><BR><BR>
-					<a href="" style="color: #ffffff; font-size: 15px;">CONTACT</a>
+					<a href="https://localhost/basdat/sirima/registration.php" style="color: #ffffff; font-size: 15px;">REGISTRATION</a>
 				</td>
 				<td>
 					<BR><BR><BR><BR>
