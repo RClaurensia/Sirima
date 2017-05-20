@@ -4,18 +4,21 @@ include('db/function.php');
 
 session_start(); // Starting Session
 
+if (isset($_POST['submit'])) {
 $username = $_POST['username'];
 $password = $_POST['password'];
-
-// SQL query to fetch information of registerd users and finds user match.
-$query = pg_exec($dbconn, "insert into akun (username, role, password) values ('$username',false, $password) ");
-
 $nama_lengkap = $_POST['nama'];
 $jenis_kelamin = $_POST['jenis_kelamin'];
 $no_ktp = $_POST['no_identitas'];
 $tanggal_lahir = $_POST['tanggallahir'];
 $alamat = $_POST['alamat'];
 $email = $_POST['email'];
+}
+
+// SQL query to fetch information of registerd users and finds user match.
+$query = pg_exec($dbconn, "insert into akun (username, role, password) values ('$username',false, $password) ");
+
+
 
 $query = pg_exec($dbconn, "insert into pelamar (username, nama_lengkap, alamat, jenis_kelamin, tanggal_lahir, no_ktp, email) values ('$username', '$nama_lengkap', '$alamat', '$jenis_kelamin', '$tanggal_lahir', '$no_ktp', '$email') ");
 ?>
