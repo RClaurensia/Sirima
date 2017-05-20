@@ -1,4 +1,16 @@
+<?php
+$username = $_POST["username"];
+$password = $_POST["password"];
 
+
+
+$nama_lengkap = $_POST["nama"];
+$jenis_kelamin = $_POST["jenis_kelamin"];
+$no_ktp = $_POST["no_identitas"];
+$tanggal_lahir = $_POST["tanggallahir"];
+$alamat = $_POST["alamat"];
+$email = $_POST["email"];
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -167,27 +179,16 @@ body {
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar"  style="margin-top: 40px;">
-          <ul class="nav nav-sidebar">
-			<li class="active"><a href="http://localhost/basdat/sirima/registration.php">Register</a></li>
-            <li class=""><a href="http://localhost/basdat/sirima/pendaftaran_ss1/pemilihan_jenjang_pendaftaran.php">Buat Pendaftaran<span class="sr-only">(current)</span></a></li>
-            <li><a href="http://localhost/basdat/sirima/pemilihan_jenjang_riwayat.php">Rekap Pendaftaran</a></li>
-			<li><a href="http://localhost/basdat/sirima/pemilihan_prodi_riwayat.php">Daftar Pelamar Diterima</a></li>
-			<li><a href="http://localhost/basdat/sirima/lihat_riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
-            <li><a href="http://localhost/basdat/sirima/lihat_kartu_ujian.php">Kartu Ujian</a></li>
-            <li><a href="http://localhost/basdat/sirima/lihat_seleksi.php" >Hasil Seleksi</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px;">
+        <div class="main" style="margin-top: 60px;">
 			<form>
 				<h3>Form Pendaftaran Pelamar</h3>
 			  <div class="form-group">
 				<label for="username">Username</label>
-				<input type="text" class="form-control" id="email" placeholder="Masukkan username">
+				<input type="text" class="form-control" id="email" name="username" placeholder="Masukkan username">
 			  </div>
 			  <div class="form-group">
 				<label for="password">Password</label>
-				<input type="password" class="form-control" id="password" placeholder="Password">
+				<input type="password" class="form-control" id="password" name="password" placeholder="Password">
 			  </div>
 			   <div class="form-group">
 				<label for="retype_password">Ulangi Password</label>
@@ -195,15 +196,15 @@ body {
 			  </div>
 			  <div class="form-group">
 				<label for="nama">Nama Lengkap</label>
-				<input type="text" class="form-control" id="nama" placeholder="Nama">
+				<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
 			  </div>
 			  <div class="form-group">
 				<label for="no_identitas">Nomor Identitas</label>
-				<input type="text" class="form-control" id="no_identitas" placeholder="Nomor Identitas">
+				<input type="text" class="form-control" id="no_identitas" name="no_identitas" placeholder="Nomor Identitas">
 			  </div>
 			  <div class="form-group">
 				<label for="jenis_kelamin">Jenis Kelamin</label>
-				<select class="form-control" id="jenis_kelamin">
+				<select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
 				  <option>Laki-laki</option>
 				  <option>Perempuan</option>
 				</select>
@@ -212,16 +213,16 @@ body {
 				<label for="exampleSelect2">Tanggal Lahir</label>
 				 <div class="well">
 					<!--<button id="btn2" style="float: right">manual set to 03/17/12</button>-->
-					<input type="text" class="span2" value="02/16/12" data-date-format="mm/dd/yy" id="dp2" >
+					<input type="text" class="span2" value="02/16/12" data-date-format="mm/dd/yy" id="dp2" name="tanggallahir" >
 				  </div>
 			  </div>
 			  <div class="form-group">
 				<label for="alamat">Alamat</label>
-				<textarea class="form-control" id="alamat" rows="3"></textarea>
+				<textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
 			  </div>
 			   <div class="form-group">
 				<label for="email">Alamat Email</label>
-				<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Masukkan email" />
+				<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Masukkan email" />
 			  </div>
 			  <div class="form-group">
 				<label for="retype_email">Ulangi Email</label>
